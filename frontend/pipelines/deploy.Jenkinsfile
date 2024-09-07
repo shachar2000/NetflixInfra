@@ -29,7 +29,7 @@ pipeline {
                         sh """
                         git config user.name "shachar2000"
                         git config user.email "shacharavrahm123@gmail.com"
-                        git add ${params.SERVICE_NAME}
+                        git add .
                         git commit -m "Update Docker image to ${params.IMAGE_FULL_NAME_PARAM}"
                         git push https://github.com/shachar2000/NetflixInfra.git
                         """
