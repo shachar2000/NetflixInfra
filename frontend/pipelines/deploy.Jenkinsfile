@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'SERVICE_NAME', defaultValue: 'frontend-deployment.yaml', description: 'The name of the YAML manifest file')
-        string(name: 'IMAGE_FULL_NAME_PARAM', defaultValue: 'shacharavraham/netflix-images-frontend:v1.0.9', description: 'The full name of the Docker image to deploy')
+        string(name: 'SERVICE_NAME', defaultValue: '', description: '')
+        string(name: 'IMAGE_FULL_NAME_PARAM', defaultValue: '', description: '')
     }
 
     environment {
