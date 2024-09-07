@@ -20,8 +20,7 @@ pipeline {
 
                     // שינוי שם התמונה בקובץ YAML
                     sh """
-                    pwd
-                    ls
+                    cd frontend
                     sed -i "s|image: shacharavraham/netflix-images-frontend:.*|image: ${params.IMAGE_FULL_NAME_PARAM}|" ${params.SERVICE_NAME}
                     """
 
