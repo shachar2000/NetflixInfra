@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: netflix-frontend
-        image: shacharavraham/netflix-images-frontend:v1.0.13
+        image: shacharavraham/netflix-images-frontend:v1.0.14
         ports:
         - containerPort: 3000
         env:
