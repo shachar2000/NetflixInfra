@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: netflix-movie-catalog
-        image: shacharavraham/netflix-images-api:v1.0.1
+        image: shacharavraham/netflix-images-api:v1.0.2
         ports:
         - containerPort: 8080
 ---
