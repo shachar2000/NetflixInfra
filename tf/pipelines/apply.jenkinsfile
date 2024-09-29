@@ -8,19 +8,17 @@ pipeline {
     }
 
     stages {
-
-        stage('change directory') {
+        stage('Change Directory') {
             steps {
-                script {
-                    dir('tf')
-                    sh 'ls'
+                dir('tf') { // נכנס לספריית tf
+                    sh 'ls' // מציג את הקבצים בספרייה
                 }
             }
         }
 
         stage('Terraform Init') {
             steps {
-                script {
+                dir('tf') { // נכנס לספריית tf
                     sh 'terraform init'
                 }
             }
@@ -28,12 +26,10 @@ pipeline {
 
         stage('Terraform Plan') {
             steps {
-                script {
+                dir('tf') { // נכנס לספריית tf
                     sh 'terraform plan -var-file=region.eu-north-1.dev.ftvars'
                 }
             }
         }
-
-       
     }
 }
