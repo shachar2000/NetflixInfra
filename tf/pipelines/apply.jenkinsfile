@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        label 'general'
+    }
+
+    triggers {
+        githubPush()   // trigger the pipeline upon push event in GitHub
+    }
+
+    stages {
+        stage('terraform init') {
+            steps {
+                script {
+                    sh '''
+                      terraform init
+                    '''
+                }
+            }
+        }
+
+        stage('terraform plan') {
+            steps {
+                script {
+                    sh """
+                     terraform plan
+                    """
+                }
+            }
+        }
+        }
+    }
+}
