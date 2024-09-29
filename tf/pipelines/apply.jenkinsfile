@@ -9,6 +9,15 @@ pipeline {
 
     stages {
 
+        stage('change directory') {
+            steps {
+                script {
+                    sh 'pwd'
+                    sh 'cd ..'
+                }
+            }
+        }
+
         stage('Terraform Init') {
             steps {
                 script {
