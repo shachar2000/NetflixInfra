@@ -13,6 +13,7 @@ pipeline {
             steps {
                 script {
                     sh 'cd tf'
+                    sh 'ls'
                 }
             }
         }
