@@ -37,7 +37,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('tf') { 
-                    sh 'terraform plan -var-file=region.eu-north-1.dev.ftvars'
+                    sh 'terraform plan -var-file region.eu-north-1.dev.ftvars'
                 }
             }
         }
