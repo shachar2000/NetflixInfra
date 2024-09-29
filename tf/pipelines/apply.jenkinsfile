@@ -4,29 +4,24 @@ pipeline {
     }
 
     triggers {
-        githubPush()   // trigger the pipeline upon push event in GitHub
+        githubPush() // trigger the pipeline upon push event in GitHub
     }
 
     stages {
-        stage('terraform init') {
+        stage('Terraform Init') {
             steps {
                 script {
-                    sh '''
-                      terraform init
-                    '''
+                    sh 'terraform init'
                 }
             }
         }
 
-        stage('terraform plan') {
+        stage('Terraform Plan') {
             steps {
                 script {
-                    sh """
-                     terraform plan -var-file region.eu-north-1.dev.ftvars
-                    """
+                    sh 'terraform plan -var-file=region.eu-north-1.dev.ftvars'
                 }
             }
-        }
         }
     }
 }
