@@ -12,8 +12,7 @@ pipeline {
         stage('change directory') {
             steps {
                 script {
-                    sh 'ls'
-                    sh 'cd ..'
+                    sh 'cd tf'
                 }
             }
         }
