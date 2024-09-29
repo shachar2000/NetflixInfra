@@ -1,5 +1,7 @@
 pipeline {
-    agent any // או agent { label 'built-in' }
+    agent {
+        label 'general'
+    }
 
     triggers {
         githubPush()
